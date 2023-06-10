@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head :: head_fragment(title = '出勤報告', scripts = ~{::script}, links = ~{::link})">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="attendance.css" />
+</head>
+<body background="/Users/kaitomiyazaki/Pictures/Photos Library.photoslibrary/originals/C/C76B8500-39BA-4EE4-9889-7D8384C61EA5.jpeg">
+    
+    <div class="header">
+        <h1>Attendance Report</h1>
+    </div>
+    <div class="container">
+<form>
+    <div class="left">
+        <div class="form-group">
+        <label for="userId">User ID</label>
+        <input type="text" id="userId">
+      </div>
+      <div class="form-group">
+        <label for="remarks">Remarks</label>
+        <textarea id="remarks"></textarea>
+      </div>
+    </div>
+    <div class="clearfix">
+    <div class="right">
+        <div class="form-group">
+            <label for="attendanceDate">Attendance Date</label>
+            <input type="date" id="attendanceDate">
+        </div>
+        <div class="form-group">
+            <label for="attendanceTime">Attendance Time</label>
+            <input type="time" id="attendanceTime">
+         </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status">
+              <option value="出勤">Attendance</option>
+              <option value="遅刻">Late arrival</option>
+              <option value="欠勤">Absence</option>
+            </select>
+            </div>
+    </div>
+    </div>
+    <div class="footer">
+        <button type="submit" id="submitBtn">Request</button>
+        <button type="button" id="backBtn">Return</button>
+    </div>
+    </form>
+    </div>
+</body>
+</html>
