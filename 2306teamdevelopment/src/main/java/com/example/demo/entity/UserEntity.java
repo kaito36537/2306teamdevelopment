@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "user_tb")
+@Table(name ="user_tb")
 public class UserEntity implements Serializable {
 
 	/**
@@ -46,5 +46,5 @@ public class UserEntity implements Serializable {
 	 * password 
 	 */
 	@Column(name = "password") 
-	String password;
+	private String password;
 }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background: url(/2306teamdevelopment/src/main/resources/static/images/背景画像.jpg) top -300px center/cover;
+  background: url(../images/背景画像.jpg) top -300px center/cover;
   font-family: "Kaisei HarunoUmi", serif;
 }
 

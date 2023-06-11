@@ -18,7 +18,7 @@ public class UserController {
 	private UserService userService;
 	
 	
-	/*
+	/*df
 	 * ユーザー登録画面の表示
 	 * @param model Model
 	 * @return ユーザー新規登録画面
@@ -26,7 +26,7 @@ public class UserController {
 	@GetMapping(value = "/user/register")
 	public String userRegistration(Model model) {
 		model.addAttribute("userRequest", new UserRequest());
-		return "user/UserRegistration";
+		return "user/UserEdit";
 	}
 	
 }
