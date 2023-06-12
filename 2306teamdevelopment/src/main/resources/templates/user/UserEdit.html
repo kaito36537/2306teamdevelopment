@@ -1,71 +1,77 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="common/UserHead::head_fragment(title='ユーザー編集', links =  ~{::link})"></head>
+<head
+	th:replace="common/UserHead::head_fragment(title='ユーザー編集', links =  ~{::link})"></head>
 
 <body>
-    <header>
-        <h1 class="header__title">User Edit</h1>
-    </header>
-    <section class="form">
-        <div class="container">
-            <form th:action="@{/user/register}" th:object="${userRequest}" th:method="post">
-                <dl class="from__list">
-                    <div class="form__up">
-                        <div class="form__item user_id">
-                            <dd>
-                                <label for="user_id">UserId</label>
-                            </dd>
-                            <dt>
-                                <input type="text" id="user_id" name="user_id">
-                            </dt>
-                        </div>
-                        <div class="form__item mail">
-                            <dd>
-                                <label for="mail">Mail</label>
-                            </dd>
-                            <dt>
-                                <input type="email" id="mail" name="mail">
-                            </dt>
-                        </div>
-                        <div class="form__item name">
-                            <dd>
-                                <label for="name">Name</label>
-                            </dd>
-                            <dt>
-                                <input type="text" id="name" name="name">
+	<header>
+		<h1 class="header__title">User Edit</h1>
+	</header>
+	<section class="form">
+		<div class="container">
+			<div th:if="${validationError}" th:text="error: ${validationError}">
+				<label th:text="&{error}"></label>
+			</div>
+			<form th:action="@{/user/update}" th:object="${userRequest}" th:method="post">
+				<dl class="from__list">
+					<div class="form__up">
+						<div class="form__item user_id">
+							<dd>
+								<label for="user_id">UserId</label>
+							</dd>
+							<dt>
+								<input type="text" id="user_id" name="user_id" th:field = "*{user_id}">
+							</dt>
+						</div>
+						<div class="form__item mail">
+							<dd>
+								<label for="mail">Mail</label>
+							</dd>
+							<dt>
+								<input type="email" id="mail" name="mail" th:field = "*{mail}">
+							</dt>
+						</div>
+						<div class="form__item name">
+							<dd>
+								<label for="name">Name</label>
+							</dd>
+							<dt>
+								<input type="text" id="name" name="name" th:field = "*{name}">
 
-                            </dt>
-                        </div>
-                        <div class="form__item password">
-                            <dd>
-                                <label for="password">Password</label>
-                            </dd>
-                            <dt>
-                                <input type="number" id="password" name="password">
-                            </dt>
-                        </div>
-                        <div class="form__item furigana">
-                            <dd>
-                                <label for="furigana">Furigana</label>
-                            </dd>
-                            <dt>
-                                <input type="text" id="furigana" name="furigana">
-                            </dt>
-                        </div>
-                    </div>
-                    <div class="form__down">
-                        <div class="container">
-                            <div class="form__down--wrapper">
-                                <button class="returnButton"><a href="/">Return</a></button>
-                                <button class="registerButton" type="submit">Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                </dl>
-            </form>
-        </div>
-    </section>
+							</dt>
+						</div>
+						<div class="form__item password">
+							<dd>
+								<label for="password">Password</label>
+							</dd>
+							<dt>
+								<input type="text" id="password" name="password" th:field = "*{password}">
+							</dt>
+						</div>
+						<div class="form__item furigana">
+							<dd>
+								<label for="furigana">Furigana</label>
+							</dd>
+							<dt>
+								<input type="text" id="furigana" name="furigana" th:field = "*{furigana}">
+							</dt>
+						</div>
+					</div>
+					<div class="form__down">
+						<div class="container">
+							<div class="form__down--wrapper">
+								<button class="returnButton">
+									<a href="/">Return</a>
+								</button>
+								<button class="registerButton" type="submit">Edit</button>
+							</div>
+						</div>
+					</div>
+				</dl>
+			</form>
+		</div>
+	</section>
 </body>
 
 </html>
