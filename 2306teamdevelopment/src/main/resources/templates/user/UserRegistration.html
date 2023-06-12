@@ -10,7 +10,10 @@
     </header>
     <section class="form">
         <div class="container">
-            <form action="#">
+        <div th:if = "${validationError}" th:text = "error: ${validationError}">
+        	<label th:text = "&{error}"></label>
+        </div>
+            <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
                 <dl class="from__list">
                     <div class="form__up">
                         <div class="form__item user_id">
@@ -18,7 +21,7 @@
                                 <label for="user_id">UserId</label>
                             </dd>
                             <dt>
-                                <input type="text" id="user_id" name="user_id">
+                                <input type="text" id="user_id" name="user_id" placeholder="" disabled >
                             </dt>
                         </div>
                         <div class="form__item mail">
@@ -43,7 +46,7 @@
                                 <label for="password">Password</label>
                             </dd>
                             <dt>
-                                <input type="number" id="password" name="password">
+                                <input type="text" id="password" name="password">
                             </dt>
                         </div>
                         <div class="form__item furigana">
@@ -59,7 +62,7 @@
                         <div class="container">
                             <div class="form__down--wrapper">
                                 <button class="returnButton"><a href="/">Return</a></button>
-                                <button class="registerButton" type="submit">Register</button>
+                                <button class="registerButton" type="submit" value = "登録">Register</button>
                             </div>
                         </div>
                     </div>

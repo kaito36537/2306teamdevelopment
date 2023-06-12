@@ -21,7 +21,7 @@ public class UserService {
 	/*
 	 * ユーザーを新規登録
 	 */
-	private void register(UserRequest userRequest) {
+	public void create(UserRequest userRequest) {
 		
 		/*
 		 * ユーザー新規登録
@@ -32,6 +32,13 @@ public class UserService {
 		user.setMail(userRequest.getMail());
 		user.setPassword(userRequest.getPassword());
 		userRepository.save(user);
-		
 	}
+	
+		/*
+		 * ユーザー情報　主キー検索
+		 * @return 検索結果
+		 */
+		public UserEntity findById(Integer user_id) {
+			return userRepository.findById(user_id).get();
+		}
 }
