@@ -21,9 +21,7 @@ import com.example.demo.service.UserService;
 @Controller
 public class UserController {
 
-	/*
-	 * Service
-	 */
+	
 	@Autowired
 	private UserService userService;
 
