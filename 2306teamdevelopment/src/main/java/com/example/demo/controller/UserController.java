@@ -77,7 +77,6 @@ public class UserController {
 		userUpdateRequest.setPassword(user.getPassword());
 		model.addAttribute("userUpdateRequest", userUpdateRequest);
 		return "user/UserEdit";
-		
 	}
 	
 
