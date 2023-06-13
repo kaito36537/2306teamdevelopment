@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+ 
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Daily work correct  form</title>
+
+</head>
+<body>
+<header>
+
+        <div class="box1">Daily work correct  form</div>
+        
+<div class="box9">
+        <div class="flex-box">
+            <div class="item-box">
+                <label for="your-name">name<span class="must"></span></label>
+            </div>
+
+         <div class="input-box">
+            <input class="text-box" type="text" name="name" required placeholder="田中 太郎" id="your-name">
+        </div>
+        </div>
+
+            <div class="flex-box">
+                <div class="item-box">
+                    <label for="how">workplac</label>
+                </div>
+                <div class="input-box">
+                    <select name="how" id="how">
+                        <option value="遠方">客先</option>
+                        <option value="社内呼び出し">社内</option>
+                        <option value="その他">案件先</option>
+                    </select>
+            </div>
+            </div>
+
+                <div class="flex-box">
+                    <div class="item-box">
+                        <label for="how">status</label>
+                    </div>
+                    <div class="input-box">
+                        <select name="how" id="how">
+                            <option value="その他">出勤</option>
+                            <option value="その他">退勤</option>
+                            <option value="その他">遅刻</option>
+                            <option value="その他">欠席</option>
+                            <option value="その他">早退</option>
+                            <option value="その他">代休</option>
+                            <option value="その他">その他</option>
+                    </select>
+                 </div>
+</div>
+</header>
+
+<main>
+<div class="box10">
+                 <div class="flex-box">
+                    <div class="item-box">
+                    <label for="reason">reason<span class="must"></span></label>
+                    </div>
+
+                <div class="input-box">
+                <input class="text-box" type="text" name="name" required placeholder="理由" id="reason">
+                </div>
+                </div>
+
+
+                <div class="flex-box">
+                <div class="item-box">
+                <label for="start">work day</label>
+                </div>
+                <input type="date" id="start" name="trip-start"
+                       value="2023-07-22"
+                       min="2018-01-01" max="2018-12-31">
+                </div>
+
+
+                <div class="flex-box">
+                <div class="item-box">
+                <label for="start">leave wolk day</label>
+                </div>
+                <input type="date" id="starts" name="trip-start"
+                        value="2023-07-22"
+                        min="2018-01-01" max="2018-12-31">
+                </div>
+</div>
+
+</main>
+
+<footer>
+<div class="box11">
+        <div class="flex-box">
+        <div class="item-box">
+        <label for="time">Blake time</label>
+        </div>
+        <input type="time" name="予定の時刻" /><span></span>
+        </div>
+
+        <div class="flex-box">
+        <div class="item-box">
+        <label for="time">work time</label>
+        </div>
+        <input type="time" name="予定の時刻" /><span></span>
+        </div>
+
+        <div class="flex-box">
+        <div class="item-box">
+        <label for="time">leave work time</label>
+        </div>
+        <input type="time" name="予定の時刻"/><span></span>
+        </div>
+</div>
+
+</footer>
+
+        <button type="submit" name="send">OK</button>
+
+</body>
+</html>
