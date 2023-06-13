@@ -1,0 +1,84 @@
+body {
+   font-family: "Kaisei HarunoUmi", serif;
+   background: url(/Users/ogatatakeru/LetsEngineer/spring_2306/2306teamdevelopment/2306teamdevelopment/src/main/resources/static/images/背景画像.jpg)center center / cover;
+   }
+   
+.container{
+   overflow:auto;
+   margin-top: 70px;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 900px;
+   max-height: 300px;
+   display: flex;
+   flex-wrap:wrap
+}
+.header__title{
+   font-size: 50px;
+   font-weight: 700px;
+   color: #aca642;
+}
+.itiran_title{
+	width: 100%;
+	font-size: 30px;
+	color: #405298;
+	text-align: center;
+	background-color: white;
+	
+}
+.bikou{
+	white-space: nowrap;
+}
+.nakami{
+	height: 30px;
+	font-size: 26px;
+	color: #405298;
+	text-align: left
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form__down {
+  margin-top: 150px;
+}
+  
+.form__down--wrapper {
+  margin-left: auto;
+  width: 197px;
+}
+
+.returnButton {
+  width: 80px;
+  height: 75px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.returnButton a {
+  color: #405298;
+}
+
+.registerButton {
+  width: 80px;
+  height: 75px;
+  color: #405298;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+  margin-left: 15px;
+}
