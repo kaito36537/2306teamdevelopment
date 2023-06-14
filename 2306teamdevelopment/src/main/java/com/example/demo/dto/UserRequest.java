@@ -11,6 +11,11 @@ import lombok.Data;
 
 @Data
 public class UserRequest implements Serializable{
+	
+	/**
+	 * ID
+	 */
+	private Integer user_id;
 
 	/*
 	 * name
@@ -41,5 +46,6 @@ public class UserRequest implements Serializable{
 	 */
 	
 	@NotEmpty(message = "パスワードを入力してください。")
+	@Pattern(regexp="^[a-zA-Z0-9.?/-]{4,24}$")
 	private String password;
 }

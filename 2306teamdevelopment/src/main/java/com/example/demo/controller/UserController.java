@@ -55,7 +55,7 @@ public class UserController {
 		}
 		//ユーザー情報の登録
 		userService.create(userRequest);
-		return "user/UserRegistration";
+		return "user/UserEdit";
 	}
 	
 	/**

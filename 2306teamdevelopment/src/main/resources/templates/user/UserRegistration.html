@@ -12,6 +12,7 @@
         <div class="container">
         <div th:if = "${validationError}" th:each = "error: ${validationError}">
         	<label th:text = "${error}"></label>
+        	<div th:if = "${validationError}"></div>
         </div>
             <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
                 <dl class="from__list">
@@ -21,7 +22,7 @@
                                 <label for="user_id">UserId</label>
                             </dd>
                             <dt>
-                                <input type="text" id="user_id" name="user_id" placeholder="" disabled >
+                                <input type="text" id="user_id" name="user_id" placeholder="自動でidを作成致します" disabled >
                             </dt>
                         </div>
                         <div class="form__item mail">
@@ -46,7 +47,7 @@
                                 <label for="password">Password</label>
                             </dd>
                             <dt>
-                                <input type="text" id="password" name="password">
+                                <input type="password" id="password" name="password">
                             </dt>
                         </div>
                         <div class="form__item furigana">
