@@ -55,7 +55,7 @@ public class UserController {
 		}
 		//ユーザー情報の登録
 		userService.create(userRequest);
-		return "user/UserRegistration";
+		return "user/UserEdit";
 	}
 	
 	/**
@@ -75,7 +75,6 @@ public class UserController {
 		userUpdateRequest.setPassword(user.getPassword());
 		model.addAttribute("userUpdateRequest", userUpdateRequest);
 		return "user/UserEdit";
-		
 	}
 	
 

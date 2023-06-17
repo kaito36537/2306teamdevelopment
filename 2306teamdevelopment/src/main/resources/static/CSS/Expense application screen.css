@@ -1,0 +1,93 @@
+body {
+   font-family: "Kaisei HarunoUmi", serif;
+   background: url(../img/background.jpg)center center / cover;
+   
+}
+.container {
+   margin-top: 70px;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 800px;
+   display: flex;
+   flex-wrap:wrap
+}
+/*================================================
+  header
+=================================================*/
+.header__title{
+   font-size: 50px;
+   font-weight: 700px;
+   color: #aca642;
+}
+/*================================================
+  form
+=================================================*/
+.form {
+  text-align: center;
+  margin: 70px auto 100px;
+}
+.form__up {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .form__item:nth-child(2n) {
+  margin-left: 200px;
+}
+.form__item:nth-child(n+3) {
+  margin-top: 30px;
+}
+.form__up dd {
+  font-size: 30px;
+  color: #405298;
+  text-align: left;
+}
+.form__up dt input {
+  width: 300px;
+  height: 26px;
+  margin-top: 5px;
+}
+.form__up dd {
+  font-size: 30px;
+  color: #405298;
+  text-align: left;
+}
+.form__up dt input {
+  width: 300px;
+  height: 26px;
+  margin-top: 5px;
+}
+.form__up dt select {
+  width: 300px;
+  height: 26px;
+}
+/*===============================*/
+
+.form__down {
+  margin-top: 150px;
+}
+  
+.form__down--wrapper {
+  margin-left: auto;
+  width: 197px;
+}
+
+.returnButton {
+  width: 80px;
+  height: 75px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.returnButton a {
+  color: #405298;
+}
+
+.registerButton {
+  width: 80px;
+  height: 75px;
+  color: #405298;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+  margin-left: 15px;
+}

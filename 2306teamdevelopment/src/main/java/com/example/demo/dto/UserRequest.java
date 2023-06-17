@@ -11,6 +11,11 @@ import lombok.Data;
 
 @Data
 public class UserRequest implements Serializable{
+	
+	/**
+	 * ID
+	 */
+	private Integer user_id;
 
 	/*
 	 * name
@@ -24,7 +29,7 @@ public class UserRequest implements Serializable{
 	 */
 	@NotEmpty(message = "フリガナを入力してください。")
 	@Size(max = 20, message = "フリガナは20文字以内で入力してください。")
-	@Pattern(regexp = "^[ｦ-ﾟ0-9 ]*$")
+	@Pattern(regexp = "^[\\u30A0-\\u30FF]+$")
 	private String furigana;
 	
 
@@ -41,5 +46,6 @@ public class UserRequest implements Serializable{
 	 */
 	
 	@NotEmpty(message = "パスワードを入力してください。")
+	@Pattern(regexp="^[a-zA-Z0-9.?/-]{4,24}$")
 	private String password;
 }
