@@ -1,6 +1,6 @@
 body {
    font-family: "Kaisei HarunoUmi", serif;
-   background: url(/Users/ogatatakeru/LetsEngineer/spring_2306/2306teamdevelopment/2306teamdevelopment/src/main/resources/static/images/背景画像.jpg)center center / cover;
+   background: url("../../static/images/背景画像.jpg")center center / cover;
    }
    
 .container{
@@ -8,7 +8,7 @@ body {
    margin-top: 70px;
    margin-left: auto;
    margin-right: auto;
-   max-width: 900px;
+   max-width: 1200px;
    max-height: 300px;
    display: flex;
    flex-wrap:wrap
