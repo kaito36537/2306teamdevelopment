@@ -29,7 +29,7 @@ public class UserRequest implements Serializable{
 	 */
 	@NotEmpty(message = "フリガナを入力してください。")
 	@Size(max = 20, message = "フリガナは20文字以内で入力してください。")
-	@Pattern(regexp = "^[\\u30A0-\\u30FF]+$")
+	@Pattern(regexp = "^[\\u30A0-\\u30FF]+$", message="全角カタカナを入力してください")
 	private String furigana;
 	
 
@@ -46,6 +46,6 @@ public class UserRequest implements Serializable{
 	 */
 	
 	@NotEmpty(message = "パスワードを入力してください。")
-	@Pattern(regexp="^[a-zA-Z0-9.?/-]{4,24}$")
+	@Pattern(regexp="^[a-zA-Z0-9.?/-]{4,24}$", message="パスワードは4文字以上、24文字以内で入力して下さい。")
 	private String password;
 }

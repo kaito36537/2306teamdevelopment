@@ -1,4 +1,5 @@
 package com.example.demo.controller;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,6 @@ import com.example.demo.service.UserService;
 @Controller
 public class UserController {
 
-	
 	@Autowired
 	private UserService userService;
 
@@ -33,7 +33,7 @@ public class UserController {
 	@GetMapping("/user/registration")
 	public String displayRegistration(Model model) {
 		model.addAttribute("userRequest", new UserRequest());
-		return "user/UserRegistration";
+		return "attendance";
 	}
 
 	/**
@@ -44,10 +44,10 @@ public class UserController {
 	   */
 	@PostMapping("/user/create")
 	public String create(@ModelAttribute @Validated UserRequest userRequest, BindingResult result, Model model) {
-		if(result.hasErrors()) {
+		if (result.hasErrors()) {
 			//入力チェックエラーの場合
 			List<String> errorList = new ArrayList<String>();
-			for(ObjectError error: result.getAllErrors()) {
+			for (ObjectError error : result.getAllErrors()) {
 				errorList.add(error.getDefaultMessage());
 			}
 			model.addAttribute("validationError", errorList);
@@ -57,7 +57,7 @@ public class UserController {
 		userService.create(userRequest);
 		return "user/UserEdit";
 	}
-	
+
 	/**
 	   * ユーザー編集画面を表示
 	   * @param id 表示するユーザーID
@@ -76,6 +76,28 @@ public class UserController {
 		model.addAttribute("userUpdateRequest", userUpdateRequest);
 		return "user/UserEdit";
 	}
-	
+
+	/**
+	   * ユーザー情報を更新
+	   * @param id 表示するユーザーID
+	   * @param model Model
+	   */
+
+	@PostMapping("/user/update")
+	public String update(@Validated @ModelAttribute UserUpdateRequest userUpdateRequest, BindingResult result,Model model) {
+		if (result.hasErrors()) {
+			List<String> errorList = new ArrayList<String>();
+
+			for (ObjectError error : result.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
+			}
+			model.addAttribute("validationError", errorList);
+			return "user/UserEdit";
+		}
+			//ユーザー情報の更新
+			userService.update(userUpdateRequest);
+			return "user/UserEdit";
+//			return String.format("redirect:/user/%d", userUpdateRequest.getUser_id());
+		}
 
 }

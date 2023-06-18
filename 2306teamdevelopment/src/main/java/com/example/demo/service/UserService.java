@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dto.UserRequest;
+import com.example.demo.dto.UserUpdateRequest;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.repository.UserRepository;
 
@@ -40,5 +41,17 @@ public class UserService {
 		 */
 		public UserEntity findById(Integer user_id) {
 			return userRepository.findById(user_id).get();
+		}
+		
+		/*
+		 *ユーザー情報更新 
+		 */
+		public void update(UserUpdateRequest userUpdateRequest) {
+			UserEntity user = findById(userUpdateRequest.getUser_id());
+			user.setName(userUpdateRequest.getName());
+			user.setFurigana(userUpdateRequest.getFurigana());
+			user.setMail(userUpdateRequest.getMail());
+			user.setPassword(userUpdateRequest.getPassword());
+			userRepository.save(user);
 		}
 }

@@ -2,7 +2,8 @@
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head
-	th:replace="common/UserHead::head_fragment(title='ユーザー編集', links =  ~{::link})"></head>
+	th:replace="common/UserHead::head_fragment(title='ユーザー編集', links =  ~{::link})">
+</head>
 
 <body>
 	<header>
@@ -21,7 +22,7 @@
 								<label for="user_id">UserId</label>
 							</dd>
 							<dt>
-								<input type="text" id="user_id" name="user_id" th:value = "*{user_id}">
+								<input type="text" id="user_id" name="user_id" th:value = "*{user_id}" disabled>
 							</dt>
 						</div>
 						<div class="form__item mail">
@@ -46,7 +47,7 @@
 								<label for="password">Password</label>
 							</dd>
 							<dt>
-								<input type="text" id="password" name="password" th:field = "*{password}">
+								<input type="password" id="password" name="password" th:field = "*{password}">
 							</dt>
 						</div>
 						<div class="form__item furigana">
@@ -64,7 +65,7 @@
 								<button class="returnButton">
 									<a href="/">Return</a>
 								</button>
-								<button class="registerButton" type="submit"		>Edit</button>
+								<button class="registerButton" type="submit">Edit</button>
 							</div>
 						</div>
 					</div>

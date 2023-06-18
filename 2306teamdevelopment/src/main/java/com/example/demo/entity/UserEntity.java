@@ -33,7 +33,7 @@ public class UserEntity implements Serializable {
 	/*
 	 * furigana 
 	 */
-	@Column(name = "furigana")
+	@Column(name = "furigana")	
 	private String furigana;
 	
 	/*
