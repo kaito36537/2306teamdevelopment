@@ -33,7 +33,7 @@ public class UserController {
 	@GetMapping("/user/registration")
 	public String displayRegistration(Model model) {
 		model.addAttribute("userRequest", new UserRequest());
-		return "attendance";
+		return "user/userRegistration";
 	}
 
 	/**

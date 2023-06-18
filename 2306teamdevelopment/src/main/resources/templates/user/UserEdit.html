@@ -14,7 +14,7 @@
 			<div th:if = "${validationError}" th:each= "error: ${validationError}">
 				<label th:text="${error}"></label>
 			</div>
-			<form th:action="@{/user/update}" th:object="${userRequest}" th:method="post">
+			<form th:action="@{/user/update}" th:object="${userUpdateRequest}" th:method="post">
 				<dl class="from__list">
 					<div class="form__up">
 						<div class="form__item user_id">
@@ -22,7 +22,7 @@
 								<label for="user_id">UserId</label>
 							</dd>
 							<dt>
-								<input type="text" id="user_id" name="user_id" th:value = "*{user_id}" disabled>
+								<input class="userId_input" type="text" id="user_id" name="user_id" th:value = "*{user_id}"  readonly="readonly">
 							</dt>
 						</div>
 						<div class="form__item mail">
