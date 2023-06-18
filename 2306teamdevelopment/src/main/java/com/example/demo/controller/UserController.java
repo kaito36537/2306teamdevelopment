@@ -24,8 +24,16 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-
-	/*df
+	
+	/*
+	 *マイページの表示
+	 */
+	@GetMapping("/user/mypage")
+	public String displayMypage(Model model) {
+		return "user/mypage";
+	}
+	
+	/*
 	 * ユーザー登録画面の表示
 	 * @param model Model
 	 * @return ユーザー新規登録画面
@@ -55,7 +63,7 @@ public class UserController {
 		}
 		//ユーザー情報の登録
 		userService.create(userRequest);
-		return "user/UserEdit";
+		return "user/mypage";
 	}
 
 	/**
@@ -96,7 +104,7 @@ public class UserController {
 		}
 			//ユーザー情報の更新
 			userService.update(userUpdateRequest);
-			return "user/UserEdit";
+			return "user/mypage";
 //			return String.format("redirect:/user/%d", userUpdateRequest.getUser_id());
 		}
 
