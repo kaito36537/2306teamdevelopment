@@ -21,17 +21,17 @@ public class AttendanceEntity {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "userId")
+	@Column(name = "user_id")
 	private Long userId;
 	/**
 	 * 出勤日
 	 */
-	@Column(name = "attendance_Date")
+	@Column(name = "attendance_date")
 	private Date attendanceDate;
 	/**
 	 * 出勤時間
 	 */
-	@Column(name = "attendance_Time")
+	@Column(name = "attendance_time")
 	private Time attendanceTime;
 	/**
 	 * ステータス
