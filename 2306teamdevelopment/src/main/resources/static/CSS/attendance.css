@@ -1,5 +1,5 @@
 body {
-  background-image: url("../../static/images/背景画像.jpg");
+  background-image: url("../images/背景画像.jpg");
   background-size: cover;
   background-position: center;
   font-family: 'Kaisei HarunoUmi', serif;
@@ -51,6 +51,13 @@ textarea {
   margin-bottom: 30px;
   text-align: left;
 }
+select#status {
+  width: 300px;
+  height: 26px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
 button {
   
   font-size: 10px;
