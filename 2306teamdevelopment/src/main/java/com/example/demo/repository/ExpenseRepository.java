@@ -3,10 +3,10 @@ package com.example.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.UserEntity;
+import com.example.demo.entity.ExpenseEntity;
 
 
 @Repository
-public interface ExpenseApplicationRepository extends JpaRepository<UserEntity, Integer> {
+public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Integer> {
 
 }
