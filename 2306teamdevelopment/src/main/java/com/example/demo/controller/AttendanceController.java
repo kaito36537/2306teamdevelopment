@@ -46,7 +46,7 @@ public class AttendanceController {
 		return "redirect:/mypage";
 	}
 
-	@GetMapping("/backToMyPage")
+	@GetMapping("/MyPage")
 	public String backToMyPage() {
 		// 戻るボタンが押された場合の処理
 		return "redirect:/mypage"; // マイページにリダイレクト
