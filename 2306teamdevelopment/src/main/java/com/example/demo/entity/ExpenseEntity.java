@@ -4,13 +4,16 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;	
+import javax.persistence.Table;
+
+import org.springframework.data.annotation.Id;	
 
 @Entity
 @Table(name = "expense") 
 public class ExpenseEntity {
 	
 	/*ユーザーID*/
+	@Id
 	@Column(name = "user_id")
 	private String user_id;
 	
