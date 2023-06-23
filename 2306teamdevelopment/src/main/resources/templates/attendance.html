@@ -1,50 +1,47 @@
 <!DOCTYPE html>
-<html lang="ja"
-xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/common/attendanceHead :: head_fragment(title = '出勤報告', links = ~{::link})">
-</head>
-	<body>
-		<div class="header">
-			<h1>Attendance Report</h1>
-		</div>
-		<div class="container">
-		<div class="clearfix">
-			<form>
-				<div class="left">
-					<div class="form-group">
-						<label for="userId">User ID</label>
-						<input type="text" id="userId" />
-					</div>
-					<div class="form-group">
-						<label for="remarks">Remarks</label>
-						<textarea id="remarks"></textarea>
-					</div>
-				</div>
-				
-					<div class="right">
-						<div class="form-group">
-							<label for="attendanceDate">Attendance Date</label>
-							<input type="date" id="attendanceDate" />
-						</div>
-						<div class="form-group">
-							<label for="attendanceTime">Attendance Time</label>
-							<input type="time" id="attendanceTime" />
-						</div>
-						<div class="form-group">
-							<label for="status">Status</label>
-							<select id="status">
-								<option value="出勤">Attendance</option>
-								<option value="遅刻">Late arrival</option>
-								<option value="欠勤">Absence</option>
-							</select>
-						</div>
-					</div>
-				</div>
-				<div class="footer">
-					<button type="submit" id="submitBtn">Request</button>
-					<button type="button" id="backBtn">Return</button>
-				</div>
-			</form>
-		</div>
-	</body>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/attendanceHead :: head_fragment(title='出勤報告', links=~{::link})"></head>
+<body>
+    <div class="header">
+        <h1>Attendance Report</h1>
+    </div>
+    <div class="container">
+        <div class="clearfix">
+            <form th:action="@{/attendance/submit}" th:object="${attendance}" method="post">
+                <div class="left">
+                    <div class="form-group">
+                        <label for="userId">User ID</label>
+                        <input type="text" id="userId" name="userId" />
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Remarks</label>
+                        <textarea id="remarks" name="remarks"></textarea>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="form-group">
+                        <label for="attendanceDate">Attendance Date</label>
+                        <input type="date" id="attendanceDate" name="attendanceDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="attendanceTime">Attendance Time</label>
+                        <input type="time" id="attendanceTime" name="attendanceTime" />
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" name="status">
+                            <option value="出勤">Attendance</option>
+                            <option value="遅刻">Late arrival</option>
+                            <option value="欠勤">Absence</option>
+                        </select>
+                    </div>
+                </div>
+        </div>        
+                <div class="footer">
+                    <button class="backBtn"><a href="https://www.netflix.com/jp/login">Return</a></button>
+                    <button class="submitBtn" type="submit" value="submit">Submit</button>
+                </div>
+            </form>
+    </div>
+</body>
 </html>
