@@ -6,6 +6,9 @@ body {
   margin: 0;
   padding: 20px;
 }
+.error {
+            color: red;
+        }
 h1 {
 color: #aca642;
   line-height: 100px;
@@ -66,7 +69,7 @@ button {
   cursor: pointer;
   border-radius: 50%;
 }
-#submitBtn {
+.submitBtn {
   width: 120px;
   height: 50px;
   color: #405298;
@@ -80,7 +83,7 @@ button {
   height: 75px; /* ボタンの高さ */
 }
 
-#backBtn {
+.backBtn {
   width: 120px;
   height: 50px;
   color: #405298;

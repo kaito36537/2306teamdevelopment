@@ -1,20 +1,19 @@
 package com.example.demo.entity;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.ZoneId;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;	
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;	
 
 @Entity
-@Table(name = "attendance") 
+@Table(name = "attendance_table") 
 public class AttendanceEntity {
 	/**
 	 * ID
@@ -27,12 +26,13 @@ public class AttendanceEntity {
 	 * 出勤日
 	 */
 	@Column(name = "attendance_date")
-	private Date attendanceDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd") // 適切な日付フォーマットを指定
+	private LocalDate attendanceDate;
 	/**
 	 * 出勤時間
 	 */
 	@Column(name = "attendance_time")
-	private Time attendanceTime;
+	private LocalTime attendanceTime;
 	/**
 	 * ステータス
 	 */
@@ -44,42 +44,42 @@ public class AttendanceEntity {
 	@Column(name = "remarks")
 	private String remarks;
 	
-	  public Long getUserId() {
-	        return userId;
-	    }
-	  public void setUserId(Long userId) {
-	        this.userId = userId;
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public LocalDate getAttendanceDate() {
+		return attendanceDate;
+	}
+	public void setAttendanceDate(LocalDate attendanceDate) {
+	    this.attendanceDate = attendanceDate;
+	}
+
+	public LocalTime getAttendanceTime() {
+	    return attendanceTime;
+	}
+
+	public void setAttendanceTime(LocalTime attendanceTime) {
+	    this.attendanceTime = attendanceTime;
 	    }
 
-	    public LocalDate getAttendanceDate() {
-	        return attendanceDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-	    }
+	public String getStatus() {
+		return status;
+	}
 
-	    public void setAttendanceDate(LocalDate attendanceDate) {
-	        this.attendanceDate = Date.from(attendanceDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-	    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-	    public LocalTime getAttendanceTime() {
-	        return attendanceTime.toLocalTime();
-	    }
+	public String getRemarks() {
+		return remarks;
+	}
 
-	    public void setAttendanceTime(LocalTime attendanceTime) {
-	        this.attendanceTime = Time.valueOf(attendanceTime);
-	    }
-
-	    public String getStatus() {
-	        return status;
-	    }
-
-	    public void setStatus(String status) {
-	        this.status = status;
-	    }
-	    public String getRemarks() {
-	        return remarks;
-	    }
-
-	    public void setRemarks(String remarks) {
-	        this.remarks = remarks;
-	    }
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
 }
-

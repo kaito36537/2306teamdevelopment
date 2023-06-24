@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -18,22 +19,22 @@ public class AttendanceRequest implements Serializable {
     @NotEmpty(message = "ユーザーIDを入力してください。")
     @Pattern(regexp = "[a-zA-Z0-9]+", message = "半角英数字のみ入力してください。")
     @Size(max = 20, message = "ユーザーIDは20文字以内で入力してください。")
-    private Long userId;
+    private Long attendanceId;
     /**
      * ステータス
      */
-    @NotEmpty(message = "選択してください。")
+    @NotEmpty(message = "ステータスを選択して下さい")
     private String status;
     /**
      * AttendanceDate出勤日
      */
-    @NotEmpty(message = "選択してください。")
-    private LocalDate AttendanceDate;
+    @NotNull(message = "出勤日を入力してください")
+    private LocalDate attendanceDate;
     /**
      * 出勤時間
      */
-    @NotEmpty(message = "選択してください。")
-    private LocalTime AttendanceTime;
+    @NotNull(message = "出勤時間を入力してください")
+    private LocalTime attendanceTime;
     /**
      * 備考
      */
