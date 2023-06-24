@@ -14,10 +14,5 @@ public class ExpenseController {
 	 @Autowired
 	  private ExpenseService expenseService;
 	 
-	  @GetMapping(value = "/user/list")
-	  public String displayList(Model model) {
-	    List<User> userlist = userService.searchAll();
-	    model.addAttribute("userlist", userlist);
-	    return "user/list";
 	  }
 }
