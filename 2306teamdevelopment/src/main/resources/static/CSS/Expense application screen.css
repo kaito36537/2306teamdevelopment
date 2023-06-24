@@ -1,6 +1,6 @@
 body {
    font-family: "Kaisei HarunoUmi", serif;
-   background: url(../img/background.jpg)center center / cover;
+   background: url("../../static/images/背景画像.jpg")center center / cover;
    
 }
 .container {
