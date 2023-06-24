@@ -24,126 +24,17 @@
       <th class="keihikoumoku" width="25%">Expense item</th>
       <th class="bikou" width="25%">Remarks</th>
     </thead>
-    <div class="style_namami">
+    <tr th:each="ExpenseEntity : ${expenselist}" th:object="${ExpenseEntity}">
+    <tr class="style_namami">
     <tbody class="nakami1">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td class="center" th:text="*{user_id}"></td>
+      <td class="center" th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></td>
+      <td th:text="*{shinsei_koumoku}"></td>
+      <td th:text="*{shinsei_money}"></td>
+      <td th:text="*{bikou}">
     </tbody>
-    <tbody class="nakami2">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>   
-    <tbody class="nakami3">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody> 
-    <tbody class="nakami4">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody> 
-    <tbody class="nakami5">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody> 
-    <tbody class="nakami6">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami5">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami7">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami8">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami9">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>
-    <tbody class="nakami10">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami1">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami2">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami3">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami4">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami5">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
-    <tbody class="nakami16">
-      <td>あ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tbody>  
+    </tr>
+    </tr>
     </div>      
   </table>
     </div>

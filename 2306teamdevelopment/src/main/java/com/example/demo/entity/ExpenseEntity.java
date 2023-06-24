@@ -4,18 +4,22 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;	
 
 @Entity
-@Table(name = "expense") 
+@Table(name = "keihi_tb") 
 public class ExpenseEntity {
+	
 	
 	/*ユーザーID*/
 	@Id
 	@Column(name = "user_id")
-	private String user_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long user_id;
 	
 	/*申請日*/
 	@Column(name = "shinsei_day")
