@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/common/UserHead :: head_fragment(title = 'ユーザー登録', links = ~{::link})">
+</head>
+<body>
+ <header>
+        <h1 class="header__title">Mypage</h1>
+    </header>
+	<div class="container mypage__wrapper">
+		<button onclick="location.href='/user/registration'">Register</button>
+		<br>
+		<button onclick="location.href='/user/63/edit'" id = "mypagee__edit">Edit</button>
+	</div>
+</body>
+</html>
