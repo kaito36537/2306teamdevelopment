@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+background-image: url(../images/背景画像.jpg);
+background-size: cover;
+font-family: 'Kaisei HarunoUmi', serif;
+}
+
+.box1 {
+    font-size: 70px;
+    color: #c1a719;
+}
+
+.box9 {
+display: flex;
+margin: 10px;
+text-align: center;
+}
+
+.box10 {
+display: flex;
+margin: 10px;
+text-align: center;
+}
+
+.box11 {
+    display: flex;
+    margin: 10px;
+text-align: center;
+}
+
+.flex-box {
+    width: 1000px;
+}
+
+.item-box {
+    font-size: 50px;
+    color: rgb(26, 38, 98);
+}
+
+
+
+.input-box {
+font-size: 40px;
+}
+
+.text-box {
+    width: 250px;
+}
+
+select {
+font-size: 30px;
+width: 200px;
+}
+
+
+textarea {
+    width: 380px;
+    height: 150px;
+}
+
+button {
+    overflow     : hidden;
+    position     : relative;
+    margin-left: 80%;
+    margin-top: 8%;
+                                /* 図形のCSS */
+    width        : 120px;
+    height       : 120px;
+    background   : linear-gradient(to bottom, #c1a719, #c1a719);
+    border-radius: 50%;
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-size: 40px;
+    color: rgb(26, 38, 98);
+}
+
+label { /**💌start date**/
+    color: rgb(26, 38, 98);
+
+}
+
+input {
+    font-size: 30px; 
+    width: 250px;
+}
+
+label {
+
+    font-size: 30px;
+}
+
+.box1-1 label{
+    display: block;
+    color: rgb(26, 38, 98);
+
+}
+

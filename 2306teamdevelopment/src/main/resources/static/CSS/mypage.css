@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.mypage__wrapper {
+	display: flex;
+	margin-top:100px; 
+	width: 250px;
+}
+
+#mypagee__edit{
+	margin-left: 50px;
+}

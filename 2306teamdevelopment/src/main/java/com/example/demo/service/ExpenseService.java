@@ -18,11 +18,36 @@ public class ExpenseService {
 	/*コントラクタ*/	
 
 	/*データベースから情報を全て持ってくるやつ*/
-	public List<ExpenseEntity> findAll(){
+	public List<ExpenseEntity> searchAll(){
 	    return expenseRepository.findAll();
 	    }
-	/*データベースに情報を追加するやつ*/
-	  public void addExpense(ExpenseEntity expenseEntity) {
-		  expenseRepository.save(expenseEntity);
-	  }
 }
+	/*データベースに情報を追加するやつ*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	  public void create(ExpenseRequest expenseRequest) {
+		    Date now = new Date();
+		    User user = new User();
+		    user.setUser_ID(expenseRequest.getUser_ID());
+		    user.setShinsei_Day(now);
+		    user.setKoumoku(expenseRequest.getAddress());
+		    user.setKeihi_ID(expenseRequest.getName());
+		    user.Money(expenseRequest.getName());
+		    user.setBikou(expenseRequest.getPhone());
+		    
+		    expenseRepository.save(user);
+		  }
+		}
+	*/
