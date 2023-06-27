@@ -30,11 +30,11 @@ public class UserController {
 	 */
 	@GetMapping("/user/mypage")
 	public String displayMypage(Model model) {
-		return "user/mypage";
+		return "mypage";
 	}
 	
 	/*
-	 * ユーザー登録画面の表示
+	 * ユーザー登録画面の
 	 * @param model Model
 	 * @return ユーザー新規登録画面
 	 */
@@ -63,7 +63,7 @@ public class UserController {
 		}
 		//ユーザー情報の登録
 		userService.create(userRequest);
-		return "user/mypage";
+		return "mypage";
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class UserController {
 		}
 			//ユーザー情報の更新
 			userService.update(userUpdateRequest);
-			return "user/mypage";
+			return "mypage";
 //			return String.format("redirect:/user/%d", userUpdateRequest.getUser_id());
 		}
 
