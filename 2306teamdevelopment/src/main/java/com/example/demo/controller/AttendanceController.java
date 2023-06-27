@@ -26,6 +26,7 @@ public class AttendanceController {
 	@GetMapping("/attendance")
 	public String showAttendance(Model model) {
 		model.addAttribute("attendanceRequest", new AttendanceRequest());
+		model.addAttribute("attendance", new AttendanceEntity()); 
 		return "attendance"; // 出勤報告入力画面のテンプレート名を返す
 	}
 	@PostMapping("/create")
@@ -33,19 +34,26 @@ public class AttendanceController {
 	    if (bindingResult.hasErrors()) {
 	        // バリデーションエラーがある場合の処理
 	        // エラーメッセージの取得や処理を行う
+	    	model.addAttribute("errors", bindingResult.getFieldErrors());
 	        return "attendance"; // エラーメッセージを表示するために入力フォームのテンプレートにリダイレクト
 	    }
 
 	    // フォームデータの受け取りと処理
 	    // attendanceRequestオブジェクトにはフォームの入力値が自動的にバインディングされます
 	    // フォームデータの保存や処理を行います
-	    
-	    return "redirect:/attendance/success"; // 成功時のリダイレクト先
+	   
+	    return "redirect:/success"; // 成功時のリダイレクト先
 	}
 
 	@PostMapping("/attendance/submit")
-	public String submitAttendanceForm(@ModelAttribute AttendanceEntity attendance,Model model){
+	public String submitAttendanceForm(@ModelAttribute("attendance") @Validated AttendanceEntity attendance,BindingResult bindingResult,Model model){
 		attendance.setAttendanceDate(LocalDate.now());
+		if (bindingResult.hasErrors()) {
+            model.addAttribute("errors", bindingResult.getFieldErrors());
+            return "attendance"; // エラーメッセージを表示するために入力フォームのテンプレートにリダイレクト
+        }
+		
+		
 		
 	 // 出勤申請情報をデータベースに保存
 	    attendanceService.createAttendanceReport(attendance);
