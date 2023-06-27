@@ -44,8 +44,9 @@ public class AttendanceController {
 	}
 
 	@PostMapping("/attendance/submit")
-	public String submitAttendanceForm(@ModelAttribute("AttendanceEntity") AttendanceEntity attendance){
+	public String submitAttendanceForm(@ModelAttribute AttendanceEntity attendance,Model model){
 		attendance.setAttendanceDate(LocalDate.now());
+		
 	 // 出勤申請情報をデータベースに保存
 	    attendanceService.createAttendanceReport(attendance);
 	    return "redirect:/mypage";//マイページにリダイレクト

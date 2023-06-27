@@ -7,6 +7,6 @@ import com.example.demo.entity.ExpenseEntity;
 
 
 @Repository
-public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Integer> {
+public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Long> {
 
 }

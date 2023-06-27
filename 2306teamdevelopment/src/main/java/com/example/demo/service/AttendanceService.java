@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.entity.AttendanceEntity;
 import com.example.demo.repository.AttendanceRepository;
@@ -13,7 +12,7 @@ public class AttendanceService {
 	@Autowired
 	private AttendanceRepository attendanceRepository;
 
-	@Transactional
+	
 	public void createAttendanceReport(AttendanceEntity attendance) {
 		AttendanceEntity attendanceEntity = new AttendanceEntity();
 		attendanceEntity.setUserId(attendance.getUserId());
