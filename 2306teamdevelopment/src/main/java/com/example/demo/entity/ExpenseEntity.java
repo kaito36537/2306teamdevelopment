@@ -40,4 +40,56 @@ public class ExpenseEntity {
 	/*備考*/
 	@Column(name = "bikou")
 	private String bikou;
+	
+	
+	
+	
+/*ユーザーIDのセットとゲット*/
+public Long getUserId() {
+	return user_id;
+}
+public void setUserId(Long userId) {
+	this.user_id = userId;
+}
+
+/*申請日のセットとゲット*/
+public Date getShinsei_Day() {
+	return shinsei_day;
+}
+public void setShinsei_Day(Date shinsei_Day) {
+	this.shinsei_day = shinsei_Day;
+}
+
+/*申請項目のセットとゲット*/
+public String getShinsei_Koumoku() {
+	return shinsei_koumoku;
+}
+public void setShinsei_Koumoku(String shinsei_Koumoku) {
+	this.shinsei_koumoku = shinsei_Koumoku;
+}
+
+/*申請IDのセットとゲット*/
+public String getKeihi_Id() {
+	return keihi_id;
+}
+public void setKeihi_Id(String keihi_Id) {
+	this.keihi_id = keihi_Id;
+}
+
+/*申請金額のセットとゲット*/
+public String getShinsei_Money() {
+	return shinsei_money;
+}
+public void setShinsei_Money(String shinsei_Money) {
+	this.shinsei_money = shinsei_Money;
+}
+
+/*備考のセットとゲット*/
+public String getBikou() {
+	return bikou;
+}
+public void setBikou(String Bikou) {
+	this.bikou = Bikou;
+}
+
 }
