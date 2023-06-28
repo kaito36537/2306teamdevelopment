@@ -4,11 +4,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.entity.ExpenseEntity;
 import com.example.demo.service.ExpenseService;
+
 /**
  * ユーザー情報 Controller
  */
@@ -19,11 +19,11 @@ import com.example.demo.service.ExpenseService;
 	  private ExpenseService expenseService;
 	 
 	 /**経費一覧画面を表示*/
-	  @RequestMapping(value = "/Expense/list", method = RequestMethod.GET)
+	  @GetMapping("/Expense/list")
 	  public String displayList(Model model) {
 	    List<ExpenseEntity> expenselist = expenseService.searchAll();
 	    model.addAttribute("expenselist", expenselist);
-	    return "/Expense list/Expense list";
+	    return "Expense list";
 	  }
 	  
 	  /**経費申請画面を表示*/

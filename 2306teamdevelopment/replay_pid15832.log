@@ -1,0 +1,5 @@
+JvmtiExport can_access_local_variables 224
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 65
+# -41544256 ciObject found
+compile org/eclipse/jdt/launching/internal/org/objectweb/asm/AnnotationVisitor <init> (I)V -1 1
