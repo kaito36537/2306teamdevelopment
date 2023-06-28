@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;	
 
@@ -21,22 +23,26 @@ public class AttendanceEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
+	@NotNull(message = "IDは必須です")
 	private Long userId;
 	/**
 	 * 出勤日
 	 */
 	@Column(name = "attendance_date")
-	@DateTimeFormat(pattern = "yyyy-MM-dd") // 適切な日付フォーマットを指定
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "出勤日は必須です") // 適切な日付フォーマットを指定
 	private LocalDate attendanceDate;
 	/**
 	 * 出勤時間
 	 */
 	@Column(name = "attendance_time")
+	@NotNull(message = "出勤時間は必須です") 
 	private LocalTime attendanceTime;
 	/**
 	 * ステータス
 	 */
 	@Column(name = "status")
+	@NotBlank(message = "ステータスは必須です") // 必須フィールドのバリデーション
 	private String status;
 	/**
 	 * 備考

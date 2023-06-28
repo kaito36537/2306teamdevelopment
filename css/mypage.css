@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background: url(../images/マイページ背景画像.jpg) center/cover;
+  background: url(../images/マイページ背景画像.jpg) center center/cover;
 }
 
 .header__title {
@@ -34,13 +34,6 @@ button:not(:nth-child(3n+1)) {
 button:nth-child(n+3) {
   margin-top: 60px;
 }
-button:hover {
-	cursor: pointer;
-	transform:scale(1.2,1.2);
-	transition:1s all;
-	opacity: 0.9;
-	
-}
 
 .attendanceList__btn {
   background-color: #c8a5c7;
@@ -70,4 +63,4 @@ button:hover {
   background-color: #c6f8af;
   width: 220px;
   height: 220px;
-}/*# sourceMappingURL=mypage.css.map */
+}
