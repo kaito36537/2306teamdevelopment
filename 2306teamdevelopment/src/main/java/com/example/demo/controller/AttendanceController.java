@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-
-
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,55 +18,51 @@ import com.example.demo.service.AttendanceService;
 @Controller
 public class AttendanceController {
 
-	@Autowired
-	private AttendanceService attendanceService;
+    @Autowired
+    private AttendanceService attendanceService;
 
-	@GetMapping("/attendance")
-	public String showAttendance(Model model) {
-		model.addAttribute("attendanceRequest", new AttendanceRequest());
-		model.addAttribute("attendance", new AttendanceEntity()); 
-		return "attendance"; // 出勤報告入力画面のテンプレート名を返す
-	}
-	@PostMapping("/create")
-	public String createUser(@ModelAttribute @Validated AttendanceRequest attendanceRequest, BindingResult bindingResult, Model model) {
-	    if (bindingResult.hasErrors()) {
-	        // バリデーションエラーがある場合の処理
-	        // エラーメッセージの取得や処理を行う
-	    	model.addAttribute("errors", bindingResult.getFieldErrors());
-	        return "attendance"; // エラーメッセージを表示するために入力フォームのテンプレートにリダイレクト
-	    }
+    @GetMapping("/attendance")
+    public String showAttendance(Model model) {
+        model.addAttribute("attendanceRequest", new AttendanceRequest());
+        model.addAttribute("attendance", new AttendanceEntity()); 
+        return "attendance"; // 出勤報告入力画面のテンプレート名を返す
+    }
 
-	    // フォームデータの受け取りと処理
-	    // attendanceRequestオブジェクトにはフォームの入力値が自動的にバインディングされます
-	    // フォームデータの保存や処理を行います
-	   
-	    return "redirect:/success"; // 成功時のリダイレクト先
-	}
-
-	@PostMapping("/attendance/submit")
-	public String submitAttendanceForm(@ModelAttribute("attendance") @Validated AttendanceEntity attendance,BindingResult bindingResult,Model model){
-		attendance.setAttendanceDate(LocalDate.now());
-		if (bindingResult.hasErrors()) {
+    @PostMapping("/create")
+    public String createUser(@ModelAttribute @Validated AttendanceRequest attendanceRequest, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getFieldErrors());
             return "attendance"; // エラーメッセージを表示するために入力フォームのテンプレートにリダイレクト
         }
-		
-		
-		
-	 // 出勤申請情報をデータベースに保存
-	    attendanceService.createAttendanceReport(attendance);
-	    return "redirect:/mypage";//マイページにリダイレクト
-	}
 
-	@GetMapping("/success")
-	public String showSuccessPage() {
-		// 成功画面の表示
-		return "redirect:/mypage";
-	}
+        // フォームデータの受け取りと処理
+        // attendanceRequestオブジェクトにはフォームの入力値が自動的にバインディングされます
+        // フォームデータの保存や処理を行います
 
-	@GetMapping("/MyPage")
-	public String redirectToMyPage() {
-		// 戻るボタンが押された場合の処理
-		return "redirect:/mypage"; // マイページにリダイレクト
-	}
+        return "redirect:/success"; // 成功時のリダイレクト先
+    }
+
+    @PostMapping("/attendance/submit")
+    public String submitAttendanceForm(@ModelAttribute("attendance") @Validated AttendanceEntity attendance, BindingResult bindingResult, Model model) {
+        attendance.setAttendanceDate(LocalDate.now());
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("errors", bindingResult.getFieldErrors());
+            return "attendance"; // エラーメッセージを表示するために入力フォームのテンプレートにリダイレクト
+        }
+
+        // 出勤申請情報をデータベースに保存
+        attendanceService.createAttendanceReport(attendance);
+        return "redirect:/mypage"; // マイページにリダイレクト
+    }
+
+    @GetMapping("/success")
+    public String showSuccessPage() {
+        // 成功画面の表示
+        return "redirect:/mypage";
+    }
+
+    @GetMapping("/mypage")
+    public String showMyPage() {
+        return "mypage"; // マイページのテンプレート名を返す
+    }
 }
