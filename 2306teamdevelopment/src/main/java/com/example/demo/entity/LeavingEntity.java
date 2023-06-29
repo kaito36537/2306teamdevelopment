@@ -14,12 +14,12 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.Data;	
+import lombok.Data;
 
 @Entity
 @Data
 @Table(name = "attendance") 
-public class AttendanceEntity {
+public class LeavingEntity {
 	/**
 	 * ID
 	 */
@@ -29,18 +29,18 @@ public class AttendanceEntity {
 	@NotNull(message = "IDは必須です")
 	private Long userId;
 	/**
-	 * 出勤日
+	 * 退勤日
 	 */
-	@Column(name = "attendance_date")
+	@Column(name = "leaving_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull(message = "出勤日は必須です") // 適切な日付フォーマットを指定
-	private LocalDate attendanceDate;
+	@NotNull(message = "退勤日は必須です") // 適切な日付フォーマットを指定
+	private LocalDate leavingDate;
 	/**
-	 * 出勤時間
+	 * 退勤時間
 	 */
-	@Column(name = "attendance_time")
-	@NotNull(message = "出勤時間は必須です") 
-	private LocalTime attendanceTime;
+	@Column(name = "leaving_time")
+	@NotNull(message = "退勤時間は必須です") 
+	private LocalTime leavingTime;
 	/**
 	 * ステータス
 	 */
@@ -52,6 +52,12 @@ public class AttendanceEntity {
 	 */
 	@Column(name = "remarks")
 	private String remarks;
+	/**
+	 * 休憩時間
+	 */
+	@Column(name = "break_time")
+	@NotBlank(message = "休憩時間は必須です")
+	private LocalTime breakTime;
 	
 	public Long getUserId() {
 		return userId;
@@ -61,19 +67,19 @@ public class AttendanceEntity {
 		this.userId = userId;
 	}
 
-	public LocalDate getAttendanceDate() {
-		return attendanceDate;
+	public LocalDate getLeavingDate() {
+		return leavingDate;
 	}
-	public void setAttendanceDate(LocalDate attendanceDate) {
-	    this.attendanceDate = attendanceDate;
-	}
-
-	public LocalTime getAttendanceTime() {
-	    return attendanceTime;
+	public void setLeavingDate(LocalDate leavingDate) {
+	    this.leavingDate = leavingDate;
 	}
 
-	public void setAttendanceTime(LocalTime attendanceTime) {
-	    this.attendanceTime = attendanceTime;
+	public LocalTime getLeavingTime() {
+	    return leavingTime;
+	}
+
+	public void setLeavingTime(LocalTime leavingTime) {
+	    this.leavingTime = leavingTime;
 	    }
 
 	public String getStatus() {
@@ -91,4 +97,15 @@ public class AttendanceEntity {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+	
+	public LocalTime getBreakTime() {
+		return breakTime;
+	}
+
+	public void setBreakTime(LocalTime breaktime) {
+		this.breakTime = breaktime;
+	}
+	
+	
+	
 }
