@@ -11,22 +11,23 @@ import com.example.demo.repository.ExpenseRepository;
 @Transactional
 
 public class ExpenseregisterService{
-	@SuppressWarnings("unused")
 	@Autowired
 	private ExpenseRepository expenseRepository;
 	
-	
-	  public void create(ExpenseEntity expenseRegister) {
+	  /*データベースに登録する値を保持するインスタンス*/
+	  public void insert(ExpenseEntity expenseentity) {
 		  
-		  
+		/*画面から受け取った値をデータベースに保存するインスタンスに渡す*/
 		  ExpenseEntity registerEntity = new ExpenseEntity();
-		  registerEntity.setUserId(expenseRegister.getUserId());
-		  registerEntity.setShinsei_Day(expenseRegister.getShinsei_Day());
-		  registerEntity.setShinsei_Koumoku(expenseRegister.getShinsei_Koumoku());
-		  registerEntity.setKeihi_Id(expenseRegister.getKeihi_Id());
-		  registerEntity.setShinsei_Money(expenseRegister.getShinsei_Money());
-		  registerEntity.setBikou(expenseRegister.getBikou());
-	
+		  registerEntity.setUserId(expenseentity.getUserId());
+		  registerEntity.setShinsei_Day(expenseentity.getShinsei_Day());
+		  registerEntity.setShinsei_Koumoku(expenseentity.getShinsei_Koumoku());
+		  registerEntity.setKeihi_Id(expenseentity.getKeihi_Id());
+		  registerEntity.setShinsei_Money(expenseentity.getShinsei_Money());
+		  registerEntity.setBikou(expenseentity.getBikou());
+		  
+		  /*データベースへ登録*/
+		  expenseRepository.save(expenseentity);
 	  }
 	
 }
