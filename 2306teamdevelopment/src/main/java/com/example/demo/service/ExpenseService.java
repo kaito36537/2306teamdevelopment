@@ -17,8 +17,8 @@ public class ExpenseService {
 	private ExpenseRepository expenseRepository;
 	/*コントラクタ*/	
 
-	/*データベースから情報を全て持ってくるやつ*/
-	public List<ExpenseEntity> searchAll(){
+	/*データベースから情報を持ってくる*/
+	public List<ExpenseEntity> findAll(){
 	    return expenseRepository.findAll();
 	    }
 }

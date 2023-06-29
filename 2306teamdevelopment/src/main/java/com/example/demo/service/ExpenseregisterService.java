@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.dto.ExpenseRequest;
 import com.example.demo.entity.ExpenseEntity;
 import com.example.demo.repository.ExpenseRepository;
 
@@ -29,5 +30,10 @@ public class ExpenseregisterService{
 		  /*データベースへ登録*/
 		  expenseRepository.save(expenseentity);
 	  }
+
+	public void insert(ExpenseRequest expenseRequest) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 	
 }
