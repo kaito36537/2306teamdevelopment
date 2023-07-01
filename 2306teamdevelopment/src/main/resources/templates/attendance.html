@@ -3,7 +3,7 @@
 <head th:replace="/common/attendanceHead :: head_fragment(title='出勤報告', links=~{::link})"></head>
 <body>
     <table>
-        <tr th:if="${validationError}" th:each="error : ${validationError}">
+        <tr th:if="${/}" th:each="error : ${validationError}">
             <td>
                 <div class="error" th:text="${error}"></div>
             </td>
