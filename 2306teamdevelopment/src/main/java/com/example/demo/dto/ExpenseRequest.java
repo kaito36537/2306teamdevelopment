@@ -1,6 +1,6 @@
 package com.example.demo.dto;
 
-import java.io.Serializable;
+
 import java.util.Date;
 
 import lombok.Data;
@@ -8,7 +8,7 @@ import lombok.Data;
 
 
 @Data
-public class ExpenseRequest implements Serializable{
+public class ExpenseRequest{
 	
 	
 	private Integer user_id;

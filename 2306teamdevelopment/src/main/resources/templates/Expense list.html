@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	
 <head>
 <meta charset="UTF-8">
 <meta name="discription" content="経費一覧画面"/>
-<link rel="stylesheet" href="reset.css">
 <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@400;500;700&display=swap"/>
 <link rel="stylesheet" href="../static/CSS/Expense list.css" />
 
@@ -19,8 +18,8 @@
     <table class="keihiichirangamen" width="100%" border="1">
     <thead class="itiran_title">
       <th class="userid" width="20%">UserID</th>
-      <th class="sinseibi" width="15%">Application date</th>
-      <th class="kingaku" width="15%" >AmountofMoney</th>
+      <th class="sinseibi" width="15%">ApplicationDate</th>
+      <th class="kingaku" width="15%" >AmountoOfMoney</th>
       <th class="keihikoumoku" width="25%">ExpenseItem</th>
       <th class="bikou" width="25%">Remarks</th>
     </thead>
@@ -28,7 +27,7 @@
     <tr class="style_namami">
     <tbody class="nakami1">
       <td class="center" th:text="*{user_id}"></td>
-      <td class="center" th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></td>
+      <td class="center" th:text="${#dates.format(keihi_tb.shinsei_day, 'yyyy/MM/dd')}"></td>
       <td th:text="*{shinsei_koumoku}"></td>
       <td th:text="*{shinsei_money}+円"></td>
       <td th:text="*{bikou}"></td>
@@ -41,7 +40,7 @@
     <div class="form__down">
 	 <div class="container">
 		 <div class="form__down--wrapper"></div>
-             <button class="returnButton"><a href="/">Return</a></button>
+             <button class="returnButton"><a href="./mypage.html">Return</a></button>
              
 	 </div>
  </div>
