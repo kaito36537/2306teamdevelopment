@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +15,7 @@ import com.example.demo.dto.LeavingRequest;
 import com.example.demo.entity.LeavingEntity;
 import com.example.demo.service.LeavingService;
 
+@Controller
 public class LeavingController {
 
 	@Autowired
@@ -25,12 +27,15 @@ public class LeavingController {
         model.addAttribute("Leaving", new LeavingEntity()); 
         return "Leaving"; // 出勤報告入力画面のテンプレート名を返す
     }
-	@PostMapping("/create")
+	@PostMapping("/Leaving/create")
     public String createUser(@ModelAttribute @Validated LeavingRequest LeavinggRequest, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getFieldErrors());
             return "Leaving"; // エラーメッセージを表示するために入力フォームのテンプレートにリダイレクト
         }
+
+        // LeavingRequestからLeavingEntityに変換して保存
+
 		return "redirect:/success";// 成功時のリダイレクト先
 	}
 	 @PostMapping("/Leaving/submit")
@@ -45,13 +50,13 @@ public class LeavingController {
 	        leavingService.createLeavingReport(Leaving);
 	        return "redirect:/mypage"; // マイページにリダイレクト
 	    }
-	 @GetMapping("/success")
+	 @GetMapping("/successLeaving")
 	    public String showSuccessPage() {
 	        // 成功画面の表示
 	        return "redirect:/mypage";
 	    }
 
-	    @GetMapping("/mypage")
+	    @GetMapping("/mypageLeaving")
 	    public String showMyPage() {
 	        return "mypage"; // マイページのテンプレート名を返す
 	    }

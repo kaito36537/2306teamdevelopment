@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -45,7 +44,7 @@ public class LeavingEntity {
 	 * ステータス
 	 */
 	@Column(name = "status")
-	@NotBlank(message = "ステータスは必須です") // 必須フィールドのバリデーション
+	@NotNull(message = "ステータスは必須です") // 必須フィールドのバリデーション
 	private String status;
 	/**
 	 * 備考
@@ -56,7 +55,7 @@ public class LeavingEntity {
 	 * 休憩時間
 	 */
 	@Column(name = "break_time")
-	@NotBlank(message = "休憩時間は必須です")
+	@NotNull(message = "休憩時間は必須です")
 	private LocalTime breakTime;
 	
 	public Long getUserId() {
