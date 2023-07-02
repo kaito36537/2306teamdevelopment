@@ -41,5 +41,5 @@ public class AttendanceRequest implements Serializable {
     /**
      * 備考
      */
-    private String Remarks;
+    private String remarks;
 }

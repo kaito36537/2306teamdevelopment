@@ -18,16 +18,16 @@ public class ExpenseRegisterController{
 	
 	/*登録画面を表示*/
 	@GetMapping("/Expense/register")
-	public String createExpense(Model model) {
+	public String showExpense(Model model){
 		    model.addAttribute("expenseRequest", new ExpenseRequest());
 		    return "Expense application screen";
 	}
 	
 	@PostMapping("/Expense/Create")
-    public String saveExpense(@ModelAttribute ExpenseRequest expenseRequest, Model model) {
+    public String saveExpense(@ModelAttribute ExpenseRequest expenseRequest, Model model){
         /*ユーザー情報の登録*/
 		expenseRegisterService.insert(expenseRequest);
 	    /*経費一覧に値を返す*/
-		return "redirect:/Expense list";
+		return "/Expense/list";
 }
 }
