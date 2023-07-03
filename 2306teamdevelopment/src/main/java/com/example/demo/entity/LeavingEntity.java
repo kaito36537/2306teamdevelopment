@@ -56,7 +56,7 @@ public class LeavingEntity {
 	 */
 	@Column(name = "break_time")
 	@NotNull(message = "休憩時間は必須です")
-	private LocalTime breakTime;
+	private Integer breakTime;
 	
 	public Long getUserId() {
 		return userId;
@@ -97,11 +97,11 @@ public class LeavingEntity {
 		this.remarks = remarks;
 	}
 	
-	public LocalTime getBreakTime() {
+	public Integer getBreakTime() {
 		return breakTime;
 	}
 
-	public void setBreakTime(LocalTime breaktime) {
+	public void setBreakTime(Integer breaktime) {
 		this.breakTime = breaktime;
 	}
 	

@@ -27,7 +27,7 @@
                     <textarea id="remarks" name="remarks"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="breaktime">Break Time</label>
+                    <label for="breaktime">Break Time（分）</label>
                     <input type="text" id="breakTime" name="breakTime"/>
                     <div class="error" th:errors="*{breakTime}"></div>
                 </div>
@@ -47,8 +47,8 @@
                 <div class="form-group">
                     <label for="status">Status</label>
                     <select id="status" name="status">
-                        <option value="leaving work">退勤</option>
-                        <option value="leaving early">早退</option>
+                        <option value="退勤">leaving work</option>
+                        <option value="早退">leaving early</option>
                     </select>
                     <div class="error" th:errors="*{status}"></div>
                 </div>

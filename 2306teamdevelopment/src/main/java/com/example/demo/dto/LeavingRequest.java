@@ -41,6 +41,6 @@ public class LeavingRequest implements Serializable {
      * 休憩時間
      */
     @NotNull(message = "休憩時間は必須です")
-    private LocalTime breakTime;
+    private Integer breakTime;
 }
 
