@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
  
-  <link rel="stylesheet" href="../static/CSS/attendanceList.css">
+  <link rel="stylesheet" href="/CSS/attendanceList.css">
   
-  <title>Daily work correct  form</title>
+  <title>勤怠一覧</title>
 
   <!--==============JQuery読み込み===============-->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -52,7 +53,7 @@
 
 <body>
 <header>
-    <div class="box1">Daily work correct List</div>
+    <div class="box1">Attendance List</div>
 </header>
 <main>
 <!--  -->
@@ -61,33 +62,24 @@
 <!--  -->
 <table bgColor="#fff" id="sampleTable">  <!--- テーブルのIDをJavaScriptに定義します --->
     <tr>
-      <th>名前</th>
-      <th cmanFilterBtn>ステータス</th>
-      <th cmanFilterBtn>出勤日</th>
-      <th cmanFilterBtn>出勤時間</th>
-      <th cmanFilterBtn>休憩時間</th>
-      <th cmanFilterBtn>退勤時間</th>
-    </tr>
-
-    <a href="https://index.html/"><tr><td>田中 実</td><td>1</td><td>40</td><td>男</td><td>東北</td><td>123</td></tr></a>
-    <a href="https://index.html/"><tr><td>鈴木 茂</td><td>2</td><td>50</td><td>男</td><td>関東</td><td>5,487</td></tr></a>
-    <a href="https://index.html/"><tr><td>佐藤 和子</td><td>3</td><td>66</td><td>女</td><td></td><td>41</td></tr></a>
-    <a href="https://index.html/"><tr><td>ＸＸ商事</td><td>4</td><td></td><td>法人</td><td>関東</td><td>1,156</td></tr></a>
-    <a href="https://2306team.atlassian.net/wiki/spaces/2306/pages/2818160"><tr><td>伊藤 博</td><td>5</td><td>40</td><td>男</td><td>関西</td><td>8</td></tr></a>
-    <a href="https://index.html/"><tr><td>鈴木 洋子</td><td>6</td><td>36</td><td>女</td><td></td><td>753</td></tr></a>
-    <a href="https://index.html/"><tr><td>鈴木 幸子</td><td>7</td><td>25</td><td>女</td><td>東北</td><td>45</td></tr></a>
-    <a href="https://index.html/"><tr><td>田中 博 </td><td>8</td><td>20</td><td>男</td><td>関西</td><td>87</td></tr></a>
-    <a href="https://index.html/"><tr><td>ＹＹ販売</td><td>9</td><td></td><td>法人</td><td>東海</td><td>2,694</td></tr></a>
-    <a href="https://index.html/"><tr><td>田中 実</td><td>1</td><td>40</td><td>男</td><td>東北</td><td>123</td></tr></a>
-    <a href="https://index.html/"><tr><td>鈴木 茂</td><td>2</td><td>50</td><td>男</td><td>関東</td><td>5,487</td></tr></a>
-    <a href="https://index.html/"><tr><td>佐藤 和子</td><td>3</td><td>66</td><td>女</td><td></td><td>41</td></tr></a>
-    <a href="https://index.html/"><tr><td>ＸＸ商事</td><td>4</td><td></td><td>法人</td><td>関東</td><td>1,156</td></tr></a>
-    <a href="https://index.html/"><tr><td>伊藤 博</td><td>5</td><td>40</td><td>男</td><td>関西</td><td>8</td></tr></a>
-    <a href="https://index.html/"><tr><td>鈴木 洋子</td><td>6</td><td>36</td><td>女</td><td></td><td>753</td></tr></a>
-    <a href="https://index.html/"><tr><td>鈴木 幸子</td><td>7</td><td>25</td><td>女</td><td>東北</td><td>45</td></tr></a>
-    <a href="https://index.html/"><tr><td>田中 博 </td><td>8</td><td>20</td><td>男</td><td>関西</td><td>87</td></tr></a>
-    <a href="https://index.html/"><tr><td>ＹＹ販売</td><td>9</td><td></td><td>法人</td><td>東海</td><td>2,694</td></tr></a>
-    
+      <th cmanFilterBtn>UsaerId</th>
+      <th cmanFilterBtn>Status</th>
+      <th cmanFilterBtn>AttendanceDate</th>
+      <th cmanFilterBtn>AttendanceTime</th>
+      <th cmanFilterBtn>LeavingDay</th>
+      <th cmanFilterBtn>LeavingTime</th>
+      <th cmanFilterBtn>OperatingTime</th>
+      <th cmanFilterBtn>RestTime</th>
+      <th cmanFilterBtn>Remarks</th>
+    </tr> 
+<!--    <tr th:each = "attendance:${attendaceList}"><td th:text="*{attendance.user_id}"></td><td th:text="*{attendance.attendance_date}"></td><td>7月2日</td><td>9:00</td><td>7月2日</td><td>18:00</td><td>09:00</td><td>01:00</td><td>特になし</td></tr> -->
+   <tr th:each="attendance:${attendanceList}" th:object="${attendance}">
+	<td th:text="*{userId}"></td>
+	<td th:text="*{status}"></td>
+	<td th:text="*{attendanceDate}"></td>
+	<td th:text="*{attendanceTime}"></td>
+	<td th:text="*{remarks}"></td>
+   </tr>
   </table>
 
   <script type="text/javascript">
@@ -466,7 +458,7 @@
    </script>
 </main>
 <footer>
-  <button type="submit" name="send">OK</button>
+  <button type="button" onclick="location.href='/user/mypage'" class="returnButton">Return</button>
 </footer>
 </body>
 
