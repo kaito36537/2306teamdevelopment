@@ -19,7 +19,7 @@ import com.example.demo.service.ExpenseService;
 	  private ExpenseService expenseService;
 	 
 	 /**経費一覧画面を表示*/
-	  @GetMapping("/Expense/list")
+	  @GetMapping("/ExpenseList")
 	  public String expenseList(Model model) {
 	    List<ExpenseEntity> expenselist = expenseService.findAll();
 	    model.addAttribute("expenseList", expenselist);

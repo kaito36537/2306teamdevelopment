@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="discription" content="経費申請画面" />
+	<link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@400;500;700&display=swap" />
+	<link rel="stylesheet" href="../static/CSS/ExpenseApplicationScreen.css" />
+	<title>経費申請画面</title>
+</head>
+
+<body>
+	<header>
+		<h1 class="header__title">Expense application screen</h1>
+	</header>
+	<section class="form">
+		<div class="container">
+			<form th:action="@{/ExpenseCreate}" th:method="POST" th:object="${expenseRequest}">
+				<div class="from__list">
+					<div class="form__up">
+
+						<div class="form__item userid">
+							<dd>
+								<label for="USERID">UserID</label>
+							</dd>
+							<dt>
+								<input type="text" class="form--userid" th:field="*{user_id}">
+							</dt>
+						</div>
+						<div class="form__item applicationdate">
+							<dd>
+								<label for="SHINSEIBI">Application date</label>
+							</dd>
+							<dt>
+								<input type="date" class="form--applicationdate"  th:field="*{shinsei_day}">
+							</dt>
+						</div>
+						<div class="form__item expenseitem">
+							<dd>
+								<label for="KEIHIKOUMOKU">Expense item</label>
+							</dd>
+							<dt>
+								<input type="text" class="form--expenseitem" th:field="*{shinsei_koumoku}">
+							</dt>
+						</div>
+						<label for="KEIHIID">KeihiID</label>
+						</dd>
+						<dt>
+							<input type="text" class="form--userid" th:field="*{keihi_id}">
+						</dt>
+					</div>
+					<div class="form__item amountofmoney">
+						<dd>
+							<label for="KINGAKU">AmountofMoney</label>
+						</dd>
+						<dt>
+							<input type="text" class="form--amountofmoney" th:field="*{shinsei_money}">
+						</dt>
+					</div>
+					<div class="form__item remarks">
+						<dd>
+							<label for="BIKOU">Remarks</label>
+						</dd>
+						<dt>
+							<input type="text" class="form--remarks" th:field="*{bikou}">
+						</dt>
+					</div>
+				</div>
+				<div class="form__down">
+					<div class="container">
+						<div class="form__down--wrapper"></div>
+						<button class="returnButton"><a href="/mypage">Return</a></button>
+						<button type="submit" class="btn btn-primary" value="新規登録">
+					</div>
+				</div>
+			</form>
+
+			</dlv>
+	</section>
+</body>
+
+</html>
