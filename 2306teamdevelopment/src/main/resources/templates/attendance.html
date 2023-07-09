@@ -10,7 +10,7 @@
         </tr>
     </table>
     <div class="header">
-        <h1>Attendance Report</h1>
+        <h1>出勤報告</h1>
     </div>
     <div class="container">
         <div class="clearfix">
@@ -18,32 +18,32 @@
                 <table>
                     <div class="left">
                         <div class="form-group">
-                            <label for="userId">User ID</label>
+                            <label for="userId">ユーザーID</label>
                             <input type="text" id="userId" name="userId" th:field="*{userId}" />
                             <div class="error" th:errors="*{userId}"></div>
                         </div>
                         <div class="form-group">
-                            <label for="remarks">Remarks</label>
+                            <label for="remarks">備考</label>
                             <textarea id="remarks" name="remarks"></textarea>
                         </div>
                     </div>
                     <div class="right">
                         <div class="form-group">
-                            <label for="attendanceDate">Attendance Date</label>
+                            <label for="attendanceDate">出勤日</label>
                             <input type="date" id="attendanceDate" name="attendanceDate" />
                             <div class="error" th:errors="*{attendanceDate}"></div>
                         </div>
                         <div class="form-group">
-                            <label for="attendanceTime">Attendance Time</label>
+                            <label for="attendanceTime">出勤時間</label>
                             <input type="time" id="attendanceTime" name="attendanceTime" />
                             <div class="error" th:errors="*{attendanceTime}"></div>
                         </div>
                         <div class="form-group">
-                            <label for="status">Status</label>
+                            <label for="status">ステータス</label>
                             <select id="status" name="status" th:field="*{status}">
-                                <option value="出勤">Attendance</option>
-                                <option value="遅刻">Late arrival</option>
-                                <option value="欠勤">Absence</option>
+                                <option value="出勤">出勤</option>
+                                <option value="遅刻">遅刻</option>
+                                <option value="欠勤">欠勤</option>
                             </select>
                             <div class="error" th:errors="*{status}"></div>
                         </div>
@@ -51,8 +51,8 @@
                 </table>
             </div>
             <div class="footer">
-                <button class="backBtn"><a href="/mypage">Return</a></button>
-                <button class="submitBtn" type="submit" value="submit">Submit</button>
+                <button class="backBtn"><a href="/mypage">戻る</a></button>
+                <button class="submitBtn" type="submit" value="submit">登録</button>
             </div>
         </form>
     </div>

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.LeavingEntity;
 
 @Repository
-public interface LeavingRepository extends JpaRepository<LeavingEntity, Long> {
+public interface LeavingRepository extends JpaRepository<LeavingEntity, Integer> {
 }
