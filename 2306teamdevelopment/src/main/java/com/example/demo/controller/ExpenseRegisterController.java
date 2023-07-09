@@ -26,10 +26,9 @@ public class ExpenseRegisterController{
 
 	
 	@PostMapping("/ExpenseCreate")
-    public String saveExpense(@ModelAttribute ExpenseRequest expenseRequest,BindingResult bindingResult, Model model){
-        /*ユーザー情報の登録*/
+    public String create(@ModelAttribute ExpenseRequest expenseRequest,BindingResult bindingResult, Model model){
 		expenseRegisterService.insert(expenseRequest);
-	    /*経費一覧に値を返す*/
-		return "ExpenseList";
+		return "/ExpenseList";
+		
 }
 }
