@@ -27,7 +27,7 @@ public class AttendanceEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	@NotNull(message = "IDは必須です")
-	private Long userId;
+	private Integer userId;
 	/**
 	 * 出勤日
 	 */
@@ -53,7 +53,7 @@ public class AttendanceEntity {
 	@Column(name = "remarks")
 	private String remarks;
 	
-	public Long getUserId() {
+	/*public Long getUserId() {
 		return userId;
 	}
 
@@ -90,5 +90,5 @@ public class AttendanceEntity {
 
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
-	}
+	}*/
 }

@@ -26,7 +26,7 @@ public class LeavingEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	@NotNull(message = "IDは必須です")
-	private Long userId;
+	private Integer userId;
 	/**
 	 * 退勤日
 	 */
@@ -58,7 +58,7 @@ public class LeavingEntity {
 	@NotNull(message = "休憩時間は必須です")
 	private Integer breakTime;
 	
-	public Long getUserId() {
+	/*public Long getUserId() {
 		return userId;
 	}
 
@@ -103,7 +103,7 @@ public class LeavingEntity {
 
 	public void setBreakTime(Integer breaktime) {
 		this.breakTime = breaktime;
-	}
+	}*/
 	
 	
 	
