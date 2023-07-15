@@ -20,7 +20,7 @@ public class AttendanceRequest implements Serializable {
     @NotEmpty(message = "ユーザーIDを入力してください。")
     @Pattern(regexp = "[a-zA-Z0-9]+", message = "半角英数字のみ入力してください。")
     @Size(max = 20, message = "ユーザーIDは20文字以内で入力してください。")
-    private Long user_id;
+    private Integer user_id;
     /**
      * ステータス
      */

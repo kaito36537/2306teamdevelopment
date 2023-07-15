@@ -12,17 +12,18 @@ public class AttendanceService {
 	@Autowired
 	private AttendanceRepository attendanceRepository;
 
+
+
+
+		public void createAttendanceReport(AttendanceEntity attendance) {
+			AttendanceEntity attendanceEntity = new AttendanceEntity();
+			attendanceEntity.setUserId(attendance.getUserId());
+			attendanceEntity.setStatus(attendance.getStatus());
+			attendanceEntity.setAttendanceDate(attendance.getAttendanceDate());
+			attendanceEntity.setAttendanceTime(attendance.getAttendanceTime());
+			attendanceEntity.setRemarks(attendance.getRemarks());
+			attendanceRepository.save(attendanceEntity);
+		}
 	
-	public void createAttendanceReport(AttendanceEntity attendance) {
-		AttendanceEntity attendanceEntity = new AttendanceEntity();
-		attendanceEntity.setUserId(attendance.getUserId());
-		attendanceEntity.setStatus(attendance.getStatus());
-		attendanceEntity.setAttendanceDate(attendance.getAttendanceDate());
-		attendanceEntity.setAttendanceTime(attendance.getAttendanceTime());
-		attendanceEntity.setRemarks(attendance.getRemarks());
 
-		attendanceRepository.save(attendanceEntity);
 	}// データベースへのクエリの実行などを行う
-
-
-}
