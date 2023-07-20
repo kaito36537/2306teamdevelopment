@@ -26,5 +26,4 @@ public class ExpenseController {
 		model.addAttribute("expenselist", expenselist);
 		return "ExpenseList";
 	}
-
 }

@@ -23,6 +23,4 @@ public class LeavingService {
 
 		leavingRepository.save(leavingEntity);
 	}// データベースへのクエリの実行などを行う
-
-
 }

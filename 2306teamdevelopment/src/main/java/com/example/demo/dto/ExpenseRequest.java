@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+
+
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,10 +18,8 @@ public class ExpenseRequest {
 
 	private String shinsei_koumoku;
 
-	private Integer keihi_id;
-
 	private Integer shinsei_money;
 
-	private String bikou;
+	private String remarks;
 
 }

@@ -15,7 +15,6 @@ public class ExpenseService {
 
 	@Autowired
 	private ExpenseRepository expenseRepository;
-	/*コントラクタ*/	
 
 	/*データベースから情報を持ってくる*/
 	public List<ExpenseEntity> searchAll(){
