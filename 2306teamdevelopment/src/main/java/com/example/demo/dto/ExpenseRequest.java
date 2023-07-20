@@ -17,6 +17,8 @@ public class ExpenseRequest {
 	private Date shinsei_day;
 
 	private String shinsei_koumoku;
+	
+	private Integer id;
 
 	private Integer shinsei_money;
 
